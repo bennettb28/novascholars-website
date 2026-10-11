@@ -1,0 +1,21 @@
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and virtual environments
+node_modules/
+.venv/
+venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Private school and research documents
+images/*.pdf
