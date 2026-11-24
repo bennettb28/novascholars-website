@@ -163,6 +163,25 @@
     }
   }
 
+  var serverConfigPromise = null;
+  function getServerConfig() {
+    if (!serverConfigPromise) {
+      serverConfigPromise = fetch('/api/public-config', {
+        headers: { Accept: 'application/json' },
+      })
+        .then(function (res) {
+          if (!res.ok) return { _staticOnly: true };
+          var ct = res.headers.get('content-type') || '';
+          if (ct.indexOf('application/json') === -1) return { _staticOnly: true };
+          return res.json();
+        })
+        .catch(function () {
+          return { _staticOnly: true };
+        });
+    }
+    return serverConfigPromise;
+  }
+
   function initStripeCheckout() {
     var buttons = document.querySelectorAll('[data-stripe-plan]');
     if (!buttons.length) return;
@@ -175,13 +194,7 @@
       }
     });
 
-    fetch('/api/public-config', { headers: { Accept: 'application/json' } })
-      .then(function (res) {
-        return res.ok ? res.json() : {};
-      })
-      .catch(function () {
-        return {};
-      })
+    getServerConfig()
       .then(function (config) {
         buttons.forEach(function (btn) {
           var plan = btn.getAttribute('data-stripe-plan');
@@ -318,42 +331,57 @@
         message: messageInput.value.trim(),
       };
 
-      fetch('/api/contact', {
-        method: 'POST',
-        body: JSON.stringify(jsonBody),
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      })
-        .then(function (response) {
-          return response
-            .json()
-            .catch(function () {
-              return {};
-            })
-            .then(function (data) {
-              if (response.ok) {
-                return true;
+      getServerConfig()
+        .then(function (config) {
+          if (config._staticOnly || !config.emailDeliveryConfigured) {
+            return fetch(FORMSPREE_ENDPOINT, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { Accept: 'application/json' },
+            }).then(function (fsRes) {
+              if (!fsRes.ok) {
+                throw new Error('Form delivery returned status ' + fsRes.status + '.');
               }
-              var noServerBackend =
-                response.status === 404 ||
-                response.status === 405 ||
-                (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
-              if (noServerBackend) {
-                return fetch(FORMSPREE_ENDPOINT, {
-                  method: 'POST',
-                  body: new FormData(form),
-                  headers: { Accept: 'application/json' },
-                }).then(function (fsRes) {
-                  if (!fsRes.ok) {
-                    throw new Error('Form delivery returned status ' + fsRes.status + '.');
-                  }
-                  return true;
-                });
-              }
-              throw new Error((data && data.error) || 'Unable to send message.');
+              return true;
             });
+          }
+
+          return fetch('/api/contact', {
+            method: 'POST',
+            body: JSON.stringify(jsonBody),
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+          }).then(function (response) {
+            return response
+              .json()
+              .catch(function () {
+                return {};
+              })
+              .then(function (data) {
+                if (response.ok) {
+                  return true;
+                }
+                var noServerBackend =
+                  response.status === 404 ||
+                  response.status === 405 ||
+                  (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
+                if (noServerBackend) {
+                  return fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { Accept: 'application/json' },
+                  }).then(function (fsRes) {
+                    if (!fsRes.ok) {
+                      throw new Error('Form delivery returned status ' + fsRes.status + '.');
+                    }
+                    return true;
+                  });
+                }
+                throw new Error((data && data.error) || 'Unable to send message.');
+              });
+          });
         })
         .then(function () {
           form.reset();
@@ -648,44 +676,66 @@
       var submittedEmail = emailInput.value.trim();
       var hadFiles = selectedFiles.length > 0;
 
-      fetch('/api/request-materials', {
-        method: 'POST',
-        body: payload,
-        headers: { Accept: 'application/json' },
-      })
-        .then(function (response) {
-          return response
-            .json()
-            .catch(function () {
-              return {};
-            })
-            .then(function (data) {
-              if (response.ok) {
-                return true;
+      getServerConfig()
+        .then(function (config) {
+          if (config._staticOnly || !config.emailDeliveryConfigured) {
+            if (hadFiles) {
+              throw new Error(
+                config._staticOnly
+                  ? 'Direct file uploads require the Node.js server (static GitHub Pages cannot attach files).'
+                  : 'Direct email delivery with attachments requires SMTP configuration on the server.'
+              );
+            }
+            return fetch(FORMSPREE_ENDPOINT, {
+              method: 'POST',
+              body: payload,
+              headers: { Accept: 'application/json' },
+            }).then(function (fsRes) {
+              if (!fsRes.ok) {
+                throw new Error('Form delivery returned HTTP ' + fsRes.status + '.');
               }
-              var noServerBackend =
-                response.status === 404 ||
-                response.status === 405 ||
-                (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
-              if (noServerBackend && !hadFiles) {
-                return fetch(FORMSPREE_ENDPOINT, {
-                  method: 'POST',
-                  body: payload,
-                  headers: { Accept: 'application/json' },
-                }).then(function (fsRes) {
-                  if (!fsRes.ok) {
-                    throw new Error('Form delivery returned HTTP ' + fsRes.status + '.');
-                  }
-                  return true;
-                });
-              }
-              if ((response.status === 404 || response.status === 405) && hadFiles) {
-                throw new Error(
-                  'Direct file uploads require the Node.js server (static GitHub Pages cannot run server.js).'
-                );
-              }
-              throw new Error((data && data.error) || 'Request endpoint returned HTTP ' + response.status + '.');
+              return true;
             });
+          }
+
+          return fetch('/api/request-materials', {
+            method: 'POST',
+            body: payload,
+            headers: { Accept: 'application/json' },
+          }).then(function (response) {
+            return response
+              .json()
+              .catch(function () {
+                return {};
+              })
+              .then(function (data) {
+                if (response.ok) {
+                  return true;
+                }
+                var noServerBackend =
+                  response.status === 404 ||
+                  response.status === 405 ||
+                  (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
+                if (noServerBackend && !hadFiles) {
+                  return fetch(FORMSPREE_ENDPOINT, {
+                    method: 'POST',
+                    body: payload,
+                    headers: { Accept: 'application/json' },
+                  }).then(function (fsRes) {
+                    if (!fsRes.ok) {
+                      throw new Error('Form delivery returned HTTP ' + fsRes.status + '.');
+                    }
+                    return true;
+                  });
+                }
+                if ((response.status === 404 || response.status === 405) && hadFiles) {
+                  throw new Error(
+                    'Direct file uploads require the Node.js server (static GitHub Pages cannot run server.js).'
+                  );
+                }
+                throw new Error((data && data.error) || 'Request endpoint returned HTTP ' + response.status + '.');
+              });
+          });
         })
         .then(function () {
           var successMsg =
