@@ -336,7 +336,11 @@
               if (response.ok) {
                 return true;
               }
-              if (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED') {
+              var noServerBackend =
+                response.status === 404 ||
+                response.status === 405 ||
+                (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
+              if (noServerBackend) {
                 return fetch(FORMSPREE_ENDPOINT, {
                   method: 'POST',
                   body: new FormData(form),
@@ -659,12 +663,11 @@
               if (response.ok) {
                 return true;
               }
-              if (
-                response.status === 503 &&
-                data &&
-                data.code === 'SMTP_NOT_CONFIGURED' &&
-                !hadFiles
-              ) {
+              var noServerBackend =
+                response.status === 404 ||
+                response.status === 405 ||
+                (response.status === 503 && data && data.code === 'SMTP_NOT_CONFIGURED');
+              if (noServerBackend && !hadFiles) {
                 return fetch(FORMSPREE_ENDPOINT, {
                   method: 'POST',
                   body: payload,
@@ -675,6 +678,11 @@
                   }
                   return true;
                 });
+              }
+              if ((response.status === 404 || response.status === 405) && hadFiles) {
+                throw new Error(
+                  'Direct file uploads require the Node.js server (static GitHub Pages cannot run server.js).'
+                );
               }
               throw new Error((data && data.error) || 'Request endpoint returned HTTP ' + response.status + '.');
             });
