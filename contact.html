@@ -4,125 +4,168 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us | NovaScholars Academy</title>
+  <meta name="description" content="Contact NovaScholars Academy with questions about 1-on-1 tutoring, monthly plans, notes refinement, or custom study guides.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact Us | NovaScholars Academy">
+  <meta property="og:description" content="Reach NovaScholars Academy via form, email, or phone. Typical response within 24 hours.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="contact-page">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header>
-    <p><a href="index.html" class="mainlink">NovaScholars Academy</a></p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book a Session</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html">Request Materials</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+        <a href="book.html" class="nav-cta">Book a Session</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="contact-hero">
-    <div class="container">
-      <h1>Let’s Reach Your Goals</h1>
-      <p>Questions about tutoring, study plans, or availability? We’d love to help.</p>
-    </div>
-  </section>
-
-  <section class="contact-main container">
-    <div class="contact-grid">
-
-      <!-- INFO COLUMN -->
-      <div class="contact-info">
-        <div class="info-item">
-          <span class="info-icon">📍</span>
-          <div>
-            <h3>Location</h3>
-            <p>Remote sessions via Zoom or Google Meet</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <span class="info-icon">✉️</span>
-          <div>
-            <h3>Email</h3>
-            <p>
-              <a href="mailto:novascholarsacademy@icloud.com">
-                novascholarsacademy@icloud.com
-              </a>
-            </p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <span class="info-icon">⏱️</span>
-          <div>
-            <h3>Response Time</h3>
-            <p>Usually within 24 hours</p>
-          </div>
-        </div>
+  <main id="main-content">
+    <section class="contact-hero">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p>Questions about 1-on-1 tutoring, the Monthly Plan, notes refinement, or study guides? Send us a message and we’ll respond within 24 hours.</p>
       </div>
+    </section>
 
-      <!-- FORM COLUMN -->
-      <div class="contact-form-wrapper">
-        <form action="https://formspree.io/f/xeeejpre" method="POST" class="novascholars-form">
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" name="name" id="name" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" name="email" id="email" required>
+    <section class="contact-main container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📍</span>
+            <div>
+              <h3>Format</h3>
+              <p>Remote 1-on-1 sessions via Zoom or Google Meet</p>
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="service">Interested In</label>
-            <select name="service" id="service">
-              <option>1-on-1 Tutoring</option>
-              <option>Homework & Assignment Help</option>
-              <option>Notes Refinement</option>
-              <option>Essay Editing</option>
-              <option>Study Plans & Coaching</option>
-              <option>Other</option>
-            </select>
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">✉️</span>
+            <div>
+              <h3>Email</h3>
+              <p><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></p>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="message">How can we help?</label>
-            <textarea name="message" id="message" rows="5" placeholder="Tell us about the subject, grade level, or goals..." required></textarea>
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">📞</span>
+            <div>
+              <h3>Phone</h3>
+              <p><a href="tel:+12166445624">216-644-5624</a></p>
+            </div>
           </div>
 
-          <button type="submit" class="cta-btn">Send Message</button>
+          <div class="info-item">
+            <span class="info-icon" aria-hidden="true">⏱️</span>
+            <div>
+              <h3>Response Time</h3>
+              <p>Usually within 24 hours</p>
+            </div>
+          </div>
+        </div>
 
-        </form>
+        <div class="contact-form-wrapper">
+          <form id="contact-form" class="novascholars-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" autocomplete="name" required>
+                <span class="field-error" id="name-error" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" autocomplete="email" required>
+                <span class="field-error" id="email-error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Interested In</label>
+              <select name="service" id="service">
+                <option value="One-on-One Tutoring (Single Session — $50)">One-on-One Tutoring (Single Session — $50)</option>
+                <option value="Monthly Tutoring Plan ($175/month)">Monthly Tutoring Plan ($175/month)</option>
+                <option value="Notes Refinement (Standard / Pro)">Notes Refinement (Standard / Pro)</option>
+                <option value="Study Guides & Exam Preparation (Standard / Pro)">Study Guides &amp; Exam Preparation (Standard / Pro)</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">How Can We Help?</label>
+              <textarea name="message" id="message" rows="5" placeholder="Tell us about the student's subject, grade level, or any questions you have..." required></textarea>
+              <span class="field-error" id="message-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="cta-btn">Send Message</button>
+            <div id="contact-form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
       </div>
+    </section>
 
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p>Book a tutoring session directly or submit a request for custom notes refinement or a study guide.</p>
+        <div class="hero-btns">
+          <a href="book.html" class="cta-btn2">Book a Session</a>
+          <a href="request.html" class="cta-btn-outline">Request Notes / Study Guide</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
+      </div>
     </div>
-  </section>
-
-  <section class="cta-section">
-  <div class="container">
-    <h2>Ready to Start Improving?</h2>
-    <p>Join the scholars who have already transformed their grades.</p>
-    
-    <a href="book.html" class="cta-btn2">Book a Session Now</a>
-
-    <div class="cta-contact-info">
-      <div class="contact-item">
-        <span class="contact-icon">✉️</span>
-        <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">📞</span>
-        <a href="tel:+12166445624">216-644-5624</a>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
     </div>
-  </div>
-</section>
-
-  <footer>
-    <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
   </footer>
 
 </body>

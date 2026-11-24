@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Notes &amp; Study Guides | NovaScholars Academy</title>
+  <meta name="description" content="Submit a request for NovaScholars Notes Refinement or custom Study Guides & Exam Preparation in Standard or Pro tiers.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Request Notes &amp; Study Guides | NovaScholars Academy">
+  <meta property="og:description" content="Order custom Notes Refinement or Study Guides & Exam Preparation tailored to your class and exam dates.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="request-page">
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html" aria-current="page">Request Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book a Session</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Request Notes Refinement or a Study Guide</h1>
+        <p>Select your service and tier, share your course topics or notes, and we’ll review your request personally within 24 hours.</p>
+      </div>
+    </section>
+
+    <section class="request-main container">
+      <div class="request-grid">
+        <aside class="request-sidebar" aria-label="Selected service summary">
+          <div class="summary-box">
+            <h2 id="summary-service-title">Notes Refinement — Standard Tier</h2>
+            <div class="summary-price" id="summary-service-price">$20 / set</div>
+            <p id="summary-service-desc" style="color: var(--muted); font-size: 0.94rem;">
+              Cleanly organized, legible notes ready for regular class review.
+            </p>
+            <ul id="summary-service-features">
+              <li>Clean formatting and logical headings</li>
+              <li>Corrected typos, equations, and definitions</li>
+              <li>Consistent bullet hierarchy for easy reading</li>
+            </ul>
+          </div>
+
+          <div class="fulfillment-steps">
+            <h3>What Happens After You Submit</h3>
+            <ol>
+              <li>Every request is reviewed manually by our team (never auto-generated).</li>
+              <li>We email you within 24 hours to confirm scope, turnaround time, and send your payment link.</li>
+              <li>Once confirmed, we prepare and deliver your polished PDF study materials straight to your inbox.</li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="request-form-wrapper">
+          <form id="service-request-form" class="novascholars-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="request-service">Service</label>
+                <select id="request-service" name="service">
+                  <option value="notes">Notes Refinement</option>
+                  <option value="study-guide">Study Guides &amp; Exam Preparation</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="request-tier">Tier</label>
+                <select id="request-tier" name="tier">
+                  <option value="standard">Standard Tier</option>
+                  <option value="pro">Pro Tier</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="request-name">Full Name</label>
+                <input type="text" id="request-name" name="name" autocomplete="name" required>
+                <span class="field-error" id="request-name-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="request-email">Email Address</label>
+                <input type="email" id="request-email" name="email" autocomplete="email" required>
+                <span class="field-error" id="request-email-error" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="request-subject">Course / Subject</label>
+                <input type="text" id="request-subject" name="subject" placeholder="e.g., Algebra 2, Honors Biology, AP Chemistry" required>
+                <span class="field-error" id="request-subject-error" aria-live="polite"></span>
+              </div>
+              <div class="form-group">
+                <label for="request-grade">Grade Level</label>
+                <select id="request-grade" name="grade_level">
+                  <option value="">Select grade level (optional)</option>
+                  <option value="Middle School (6-8)">Middle School (Grades 6–8)</option>
+                  <option value="Grade 9">Grade 9</option>
+                  <option value="Grade 10">Grade 10</option>
+                  <option value="Grade 11">Grade 11</option>
+                  <option value="Grade 12">Grade 12</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="request-deadline">Exam or Target Due Date (optional)</label>
+              <input type="date" id="request-deadline" name="target_date">
+            </div>
+
+            <div class="form-group">
+              <label for="request-link">Link to Notes, Syllabus, or Class Folder (Recommended)</label>
+              <input type="url" id="request-link" name="material_link" placeholder="https://drive.google.com/... or iCloud / OneDrive / Dropbox link">
+              <span class="field-hint">Make sure link sharing is set to “Anyone with the link can view.” Required for Notes Refinement unless attaching files below.</span>
+              <span class="field-error" id="request-link-error" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="request-files">Attach Files Directly (Optional — up to 5 files, 10 MB each)</label>
+              <div class="file-dropzone" id="file-dropzone">
+                <p style="margin: 0; font-size: 0.92rem; color: var(--muted);">
+                  Drag and drop PDF, PNG, JPG, DOCX, or TXT files here, or choose from your device.
+                </p>
+                <input type="file" id="request-files" accept=".pdf,.png,.jpg,.jpeg,.webp,.docx,.txt" multiple>
+              </div>
+              <span class="field-error" id="request-files-error" aria-live="polite"></span>
+              <ul class="file-list" id="selected-file-list" aria-live="polite"></ul>
+            </div>
+
+            <div class="form-group">
+              <label for="request-details">Topics, Chapters &amp; Specific Goals</label>
+              <textarea id="request-details" name="details" rows="5" placeholder="Tell us which chapters/units to cover, upcoming test format, or anything you'd like emphasized..." required></textarea>
+              <span class="field-error" id="request-details-error" aria-live="polite"></span>
+            </div>
+
+            <button type="submit" class="cta-btn">Submit Material Request</button>
+            <div id="request-form-status" class="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Looking for Live 1-on-1 Tutoring Instead?</h2>
+        <p>Book a single 60-minute session or enroll in the Monthly Tutoring Plan for ongoing weekly support.</p>
+        <a href="book.html" class="cta-btn2">Go to Tutoring Booking</a>
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
+          </div>
+          <div class="contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+12166445624">216-644-5624</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
+    </div>
+  </footer>
+
+</body>
+</html>

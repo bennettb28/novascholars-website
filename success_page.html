@@ -3,152 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Successful | NovaScholars Academy</title>
+  <title>Payment Confirmation &amp; Scheduling | NovaScholars Academy</title>
+  <meta name="description" content="Payment confirmed for your NovaScholars Academy tutoring session or monthly plan. Schedule your sessions directly on Calendly.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="booking-page">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header>
-    <p><a href="index.html" class="mainlink">NovaScholars Academy</a></p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book a Session</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html">Request Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book a Session</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="services-hero">
-    <div class="success-icon"><h1>✅</h1></div>
-    <h1>Payment Successful!</h1></div>
-    <p data-plan="monthly" style="display:none;">Welcome to the NovaScholars Monthly Plan. You're all set — now let's get your sessions on the calendar.</p>
-    <p data-plan="single">Thanks for your payment. You're all set — now let's get your session on the calendar.</p>
-    <p>     </p>
-    <p>     </p>
-    <p>     </p>
-  </section>
+  <main id="main-content">
+    <section class="services-hero">
+      <div class="container">
+        <div class="success-icon" aria-hidden="true">✅</div>
+        <h1>Payment Confirmed!</h1>
+        <p data-plan="monthly" style="display:none;">
+          Welcome to the NovaScholars Monthly Tutoring Plan. Your enrollment is active—now let’s get your sessions on the calendar.
+        </p>
+        <p data-plan="single">
+          Thank you for purchasing a Single Tutoring Session. Your payment is complete—now choose your session time below.
+        </p>
+      </div>
+    </section>
 
-  <section class="booking-prep container">
-    <div class="prep-header">
-      <h2>What's Next</h2>
-      <p data-plan="monthly" style="display:none;">Use the calendar below to schedule your sessions for this month. You can book all four now, or come back and add more as the month goes on.</p>
-      <p data-plan="single">Use the calendar below to schedule your session at a time that works for you.</p>
-    </div>
-    <div class="prep-grid">
-      <div class="prep-card">
-        <div class="prep-icon">🗓️</div>
-        <h3 data-plan="monthly" style="display:none;">Book Your Sessions</h3>
-        <h3 data-plan="single">Book Your Session</h3>
-        <p data-plan="monthly" style="display:none;">Pick any four available times below — they don't need to be booked all at once.</p>
-        <p data-plan="single">Pick any available time below that works for your schedule.</p>
-      </div>
-      <div class="prep-card">
-        <div class="prep-icon">📩</div>
-        <h3>Check Your Email</h3>
-        <p data-plan="monthly" style="display:none;">You'll receive a receipt and a confirmation for each session you schedule.</p>
-        <p data-plan="single">You'll receive a receipt and a confirmation for your session.</p>
-      </div>
-      <div class="prep-card">
-        <div class="prep-icon">💬</div>
-        <h3>Questions?</h3>
-        <p>Reach out any time using the contact info below — we're happy to help.</p>
-      </div>
-    </div>
-  </section>
+    <section class="order-summary-section">
+      <div class="container">
+        <div class="order-summary" data-plan="single">
+          <div class="price-card">
+            <h2>Order Summary — Single Tutoring Session</h2>
+            <div class="summary-row">
+              <span>Plan</span>
+              <span>Single Tutoring Session</span>
+            </div>
+            <div class="summary-row">
+              <span>Session Length</span>
+              <span>60 minutes (1-on-1)</span>
+            </div>
+            <div class="summary-row">
+              <span>Billing Type</span>
+              <span>One-time payment</span>
+            </div>
+            <div class="summary-row">
+              <span>Amount</span>
+              <span>$50</span>
+            </div>
+          </div>
+        </div>
 
-  <section class="calendar-wrapper" id="calendar">
-    <div class="container">
-        <div class="prep-header">
-          <h2 data-plan="monthly" style="display:none;">Schedule Your Sessions</h2>
-          <h2 data-plan="single">Schedule Your Session</h2>
-          <p>Choose your first available time below to get started.</p>
+        <div class="order-summary" data-plan="monthly" style="display:none;">
+          <div class="price-card featured">
+            <div class="popular-label">Active Plan</div>
+            <h2>Order Summary — Monthly Tutoring Plan</h2>
+            <div class="summary-row">
+              <span>Plan</span>
+              <span>Monthly Tutoring Plan</span>
+            </div>
+            <div class="summary-row">
+              <span>Sessions Included</span>
+              <span>4 &times; 60 minutes / month</span>
+            </div>
+            <div class="summary-row">
+              <span>Billing Type</span>
+              <span>Recurring monthly</span>
+            </div>
+            <div class="summary-row">
+              <span>Amount</span>
+              <span>$175 / month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-prep">
+      <div class="container">
+        <div class="section-header">
+          <h2>What Happens Next</h2>
+          <p data-plan="monthly" style="display:none;">
+            Use the Calendly scheduler below to book your sessions for this month. You can schedule all four now, or come back anytime to add more.
+          </p>
+          <p data-plan="single">
+            Use the Calendly scheduler below to pick a date and time that works best for your 60-minute session.
+          </p>
+        </div>
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">🗓️</div>
+            <h3 data-plan="monthly" style="display:none;">1. Schedule Your 4 Sessions</h3>
+            <h3 data-plan="single">1. Schedule Your Session</h3>
+            <p data-plan="monthly" style="display:none;">Pick up to four available slots below—you don’t have to book all four at once.</p>
+            <p data-plan="single">Choose an available time slot below to lock in your tutoring session.</p>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">📩</div>
+            <h3>2. Check Your Email</h3>
+            <p>You’ll receive a Stripe payment receipt and a Calendly calendar invite with your Zoom/Google Meet link.</p>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">💬</div>
+            <h3>3. Need Any Help?</h3>
+            <p>Email or call us anytime if you run into scheduling trouble or need to adjust a session time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar-wrapper" id="calendar">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-plan="monthly" style="display:none;">Schedule Your Monthly Sessions</h2>
+          <h2 data-plan="single">Schedule Your Tutoring Session</h2>
+          <p>Select an open time slot below—no additional payment is required.</p>
         </div>
         <div class="calendar-card">
-            <div class="calendly-inline-widget" 
-                 data-url="https://calendly.com/novascholars/1-hour-tutoring-session" 
-                 style="min-width:320px;height:700px;">
-            </div>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/novascholars/1-hour-tutoring-session"
+          ></div>
         </div>
-    </div>
-  </section>
+        <p class="calendar-fallback">
+          Having trouble with the embedded calendar? <a id="calendly-direct-link" href="https://calendly.com/novascholars/1-hour-tutoring-session" target="_blank" rel="noopener noreferrer">Open Calendly in a new tab</a>.
+        </p>
+      </div>
+    </section>
 
-  <section class="pricing-group container">
-    <div><p>  </p></div>
-    <p></p>
-    <div><h1>  -- Review of Tutoring Plans --  </h1></div>
-    <div class="order-summary">
-      <div class="price-card">
-        <h3 data-plan="single">Single Session</h3>
-        <div class="summary-row" data-plan="single">
-          <span>Plan</span>
-          <span>Single Session</span>
-        </div>
-        <div class="summary-row" data-plan="single">
-          <span>Session length</span>
-          <span>60 minutes</span>
-        </div>
-        <div class="summary-row" data-plan="single">
-          <span>Amount charged</span>
-          <span>$50</span>
+    <section class="cta-section">
+      <div class="container">
+        <h2>Need Help Scheduling?</h2>
+        <p>If you have any trouble booking your session or managing your plan, reach out directly and we’ll take care of it.</p>
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
+          </div>
+          <div class="contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+12166445624">216-644-5624</a>
+          </div>
         </div>
       </div>
-    </div>
-    <p>  </p>
-    <div class="order-summary">
-      <div class="price-card">
-        <h3>Monthly Plan</h3>
-        <div class="summary-row">
-          <span>Plan</span>
-          <span>Monthly Tutoring Plan</span>
-        </div>
-        <div class="summary-row">
-          <span>Sessions included</span>
-          <span>4 &times; 60 minutes / month</span>
-        </div>
-        <div class="summary-row">
-          <span>Amount charged</span>
-          <span>$175/month</span>
-        </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-  <section class="cta-section">
-    <div class="container">
-      <h2>Need Help Scheduling?</h2>
-      <p>If you have any trouble booking your session, reach out and we'll get it sorted.</p>
-
-      <div class="cta-contact-info">
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <a href="tel:+12166445624">216-644-5624</a>
-        </div>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
     </div>
-  </section>
-
-
-  <footer>
-    <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Shows the right wording/summary for this purchase based on ?plan= in the URL.
-    // Defaults to "single" if the parameter is missing.
-    (function () {
-      var plan = new URLSearchParams(window.location.search).get('plan') === 'monthly' ? 'monthly' : 'single';
-      document.querySelectorAll('[data-plan]').forEach(function (el) {
-        el.style.display = (el.getAttribute('data-plan') === plan) ? '' : 'none';
-      });
-    })();
-  </script>
-
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

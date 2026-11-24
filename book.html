@@ -4,132 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book a Session | NovaScholars Academy</title>
+  <meta name="description" content="Book 1-on-1 tutoring with NovaScholars Academy. Choose a $50 Single Session via Stripe & Calendly or enroll in the $175/month Monthly Tutoring Plan.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book a Session | NovaScholars Academy">
+  <meta property="og:description" content="Purchase a $50 Single Tutoring Session or explore the $175/month Monthly Plan (4 sessions/month).">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="booking-page">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header>
-    <p><a href="index.html" class="mainlink">NovaScholars Academy</a></p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book a Session</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html">Request Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta" aria-current="page">Book a Session</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="services-hero">
-    <h1>1:1 Academic Tutoring</h1>
-    <p>Choose the option that fits your needs: book a single session for focused, one-off help, or join the Monthly Plan for consistent, ongoing support.</p>
-  </section>
+  <main id="main-content">
+    <section class="services-hero">
+      <div class="container">
+        <h1>Book 1-on-1 Academic Tutoring</h1>
+        <p>Purchase a single 60-minute tutoring session for focused help, or choose the Monthly Plan for four recurring sessions each month.</p>
+      </div>
+    </section>
 
-  <section class="pricing-group container">
-    <div class="pricing-grid">
-      <div class="price-card">
-        <h3>Single Session</h3>
-        <div class="price">$50</div>
-        <ul>
-          <li>One 60-minute tutoring session</li>
-          <li>Good for occasional help, a specific assignment, or a particular concept</li>
-        </ul>
-        <a href="#calendar" class="cta-btn price-btn">Book a Single Session</a>
-      </div>
-      <div class="price-card featured">
-        <div class="popular-label">Best Value</div>
-        <h3>Monthly Plan</h3>
-        <div class="price">$175<span>/month</span></div>
-        <ul>
-          <li>Four 60-minute tutoring sessions per month</li>
-          <li>Good for students who want consistent academic support</li>
-        </ul>
-        <a href="monthly-plan.html" class="cta-btn price-btn">View Monthly Plan</a>
-      </div>
-    </div>
-  </section>
+    <section class="booking-section">
+      <div class="container">
+        <div class="flow-banner" role="note">
+          <h2>How Payment &amp; Scheduling Work</h2>
+          <p>
+            <strong>New Single Session customers:</strong> Click <strong>Pay $50 via Stripe</strong> below first. Immediately after checkout, you’ll be redirected to our confirmation page to pick your time on Calendly—so you never risk paying twice.
+            <strong>Already paid or an active Monthly Plan member?</strong> Skip checkout and <a href="#calendar">schedule directly on the calendar below</a>.
+          </p>
+        </div>
 
-  <section class="booking-prep container">
-    <div class="prep-header">
-      <h2>Before You Book</h2>
-      <p>To get the most out of your 1-hour session, please ensure you have the following ready:</p>
-    </div>
-    <div class="prep-grid">
-      <div class="prep-card">
-        <div class="prep-icon">📚</div>
-        <h3>Course Materials</h3>
-        <p>Have your textbook, recent homework, or specific rubrics open and ready to share.</p>
-      </div>
-      <div class="prep-card">
-        <div class="prep-icon">🎯</div>
-        <h3>Specific Goals</h3>
-        <p>Identify 2-3 specific concepts or problems you want to master during our hour together.</p>
-      </div>
-      <div class="prep-card">
-        <div class="prep-icon">💻</div>
-        <h3>Tech Check</h3>
-        <p>Ensure your microphone and camera are working for our virtual classroom setup.</p>
-      </div>
-    </div>
-  </section>
+        <div class="pricing-grid">
+          <div class="price-card">
+            <h3>Single Tutoring Session</h3>
+            <div class="price">$50 <span>one-time</span></div>
+            <ul>
+              <li>One 60-minute live 1-on-1 session</li>
+              <li>Ideal for a specific topic, homework set, or test review</li>
+              <li>Secure one-time checkout via Stripe</li>
+              <li>Redirects directly to Calendly scheduling after payment</li>
+            </ul>
+            <a href="https://buy.stripe.com/test_7sYaEX7pecMk42P4NzgYU02" class="cta-btn price-btn" data-stripe-plan="single" data-stripe-url="https://buy.stripe.com/test_7sYaEX7pecMk42P4NzgYU02">Pay $50 via Stripe</a>
+            <div id="single-checkout-status" class="form-status" role="status" aria-live="polite"></div>
+          </div>
 
-  <section class="calendar-wrapper" id="calendar">
-    <div class="container">
-        <div class="prep-header">
-          <h2>Book Your Single Session</h2>
-          <p>Pick a time below to schedule your 60-minute session.</p>
+          <div class="price-card featured">
+            <div class="popular-label">Best Value</div>
+            <h3>Monthly Tutoring Plan</h3>
+            <div class="price">$175 <span>/ month</span></div>
+            <ul>
+              <li>Four 60-minute tutoring sessions every month</li>
+              <li>Saves $25/month compared to 4 single sessions</li>
+              <li>Recurring monthly billing (cancel before renewal)</li>
+              <li>Includes full enrollment details on the Monthly Plan page</li>
+            </ul>
+            <a href="monthly-plan.html" class="cta-btn price-btn">Go to Monthly Plan ($175/mo)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-prep">
+      <div class="container">
+        <div class="section-header">
+          <h2>Before Your Session</h2>
+          <p>To get the most out of your 60-minute lesson, have these three items ready:</p>
+        </div>
+        <div class="prep-grid">
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">📚</div>
+            <h3>Course Materials</h3>
+            <p>Have your textbook, recent assignments, or teacher rubrics open and ready to share on screen.</p>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">🎯</div>
+            <h3>Specific Goals</h3>
+            <p>Pick 2–3 concepts, homework problems, or upcoming test topics you want to master during the hour.</p>
+          </div>
+          <div class="prep-card">
+            <div class="prep-icon" aria-hidden="true">💻</div>
+            <h3>Tech Check</h3>
+            <p>Test your microphone, speakers, and internet connection for Google Meet or Zoom.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="calendar-wrapper" id="calendar">
+      <div class="container">
+        <div class="section-header">
+          <h2>Already Paid or Monthly Plan Member? Schedule Here</h2>
+          <p>Use our Calendly calendar below once your Single Session payment is complete or while your Monthly Plan is active.</p>
         </div>
         <div class="calendar-card">
-            <div class="calendly-inline-widget" 
-                 data-url="https://calendly.com/novascholars/1-hour-tutoring-session" 
-                 style="min-width:320px;height:700px;">
-            </div>
+          <div
+            class="calendly-inline-widget"
+            data-url="https://calendly.com/novascholars/1-hour-tutoring-session"
+          ></div>
         </div>
+        <p class="calendar-fallback">
+          Calendar not loading? <a href="https://calendly.com/novascholars/1-hour-tutoring-session" target="_blank" rel="noopener noreferrer">Open the Calendly scheduling page directly</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="booking-faq">
+      <div class="container">
+        <h2>Tutoring FAQs</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How do I avoid paying twice?</h3>
+            <p>Complete your $50 Stripe payment once—Stripe automatically sends you to our confirmation page with the Calendly calendar. If you have already paid and need to reschedule or book later, use the calendar above without clicking Pay again.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What if I need to reschedule?</h3>
+            <p>You can reschedule through your Calendly confirmation email up to 12 hours before your session starts.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What platform do sessions use?</h3>
+            <p>Sessions are held online via Google Meet or Zoom with screen sharing and digital whiteboarding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Need Notes Refinement or a Study Guide Instead?</h2>
+        <p>Submit your class notes or upcoming exam topics through our dedicated material request form.</p>
+        <a href="request.html" class="cta-btn2">Request Notes or Study Guide</a>
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
+          </div>
+          <div class="contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+12166445624">216-644-5624</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
+      </div>
     </div>
-  </section>
-
-  <section class="booking-faq container">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>What if I need to reschedule?</h3>
-        <p>You can reschedule through your confirmation email up to 12 hours before the session starts.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Are sessions recorded?</h3>
-        <p>Yes, for your review! We can provide a recording of the session so you can re-watch the explanations later.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What platform do you use?</h3>
-        <p>We primarily use Google Meet or Zoom, which allows for seamless screen sharing and digital whiteboarding.</p>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
     </div>
-  </section>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-
-  <section class="cta-section">
-  <div class="container">
-    <h2>Ready to Start Improving?</h2>
-    <p>Join the scholars who have already transformed their grades.</p>
-    
-    <a href="#calendar" class="cta-btn2">Book a Session Now</a>
-
-    <div class="cta-contact-info">
-      <div class="contact-item">
-        <span class="contact-icon">✉️</span>
-        <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">📞</span>
-        <a href="tel:+12166445624">216-644-5624</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <footer>
-    <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
   </footer>
 
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>

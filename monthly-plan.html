@@ -3,85 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Monthly Plan | NovaScholars Academy</title>
+  <title>Monthly Tutoring Plan | NovaScholars Academy</title>
+  <meta name="description" content="Enroll in the NovaScholars Monthly Tutoring Plan: $175/month recurring for four 60-minute 1-on-1 tutoring sessions per month.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Monthly Tutoring Plan | NovaScholars Academy">
+  <meta property="og:description" content="Four 60-minute 1-on-1 tutoring sessions every month for $175/month. Enroll via Stripe and schedule directly on Calendly.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="booking-page">
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header>
-    <p><a href="index.html" class="mainlink">NovaScholars Academy</a></p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="book.html">Book a Session</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html">Request Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book a Session</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="services-hero">
-    <h1>Monthly Tutoring Plan</h1>
-    <p>Consistent, ongoing 1:1 academic support — four sessions a month, on your schedule.</p>
-  </section>
+  <main id="main-content">
+    <section class="services-hero">
+      <div class="container">
+        <h1>Monthly Tutoring Plan</h1>
+        <p>Consistent 1-on-1 academic support with four 60-minute tutoring sessions every month—at $25/month in savings compared to single sessions.</p>
+      </div>
+    </section>
 
-  <section class="pricing-group container">
-    <div class="plan-card-wrap">
-      <div class="price-card featured">
-        <div class="popular-label">Best Value</div>
-        <h3>Monthly Plan</h3>
-        <div class="price">$175<span>/month</span></div>
-        <ul>
-          <li>4 &times; 60-minute tutoring sessions</li>
-          <li>Personalized 1:1 academic support</li>
-          <li>Flexible scheduling</li>
-          <li>Payment is made upfront for the month</li>
+    <section class="booking-section">
+      <div class="container">
+        <div class="plan-card-wrap">
+          <div class="price-card featured">
+            <div class="popular-label">4 Sessions / Month</div>
+            <h2>Monthly Tutoring Plan</h2>
+            <div class="price">$175 <span>/ month</span></div>
+            <ul>
+              <li>Four 60-minute live 1-on-1 tutoring sessions per month</li>
+              <li>Personalized guidance for math, science, and study systems</li>
+              <li>Flexible scheduling via Calendly throughout the month</li>
+              <li>Recurring monthly subscription ($175 billed monthly)</li>
+              <li>Cancel anytime before your next monthly renewal</li>
+            </ul>
+            <a href="https://buy.stripe.com/test_fZu5kD5h6h2A2YLfsdgYU00" class="cta-btn price-btn" data-stripe-plan="monthly" data-stripe-url="https://buy.stripe.com/test_fZu5kD5h6h2A2YLfsdgYU00">
+              Enroll in Monthly Plan — $175/mo
+            </a>
+            <p class="billing-note">
+              Billed automatically at $175 every month until canceled. After Stripe checkout, you’ll be redirected to our confirmation page to book your sessions.
+            </p>
+            <div id="monthly-checkout-status" class="form-status" role="status" aria-live="polite"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <div class="section-header">
+          <h2>How Monthly Enrollment Works</h2>
+          <p>Four simple steps from sign-up to your first tutoring session.</p>
+        </div>
+        <div class="how-grid">
+          <div class="how-card">
+            <h3>1. Subscribe via Stripe</h3>
+            <p>Click “Enroll in Monthly Plan” above to set up your $175/month recurring payment securely with Stripe.</p>
+          </div>
+          <div class="how-card">
+            <h3>2. View Confirmation</h3>
+            <p>Once payment succeeds, Stripe redirects you to our Monthly Plan confirmation page with your plan summary.</p>
+          </div>
+          <div class="how-card">
+            <h3>3. Schedule Your 4 Sessions</h3>
+            <p>Use the Calendly scheduler on the confirmation page to book all four monthly sessions upfront or add times week by week.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-faq">
+      <div class="container">
+        <h2>Monthly Plan Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How does recurring billing work?</h3>
+            <p>Your card is charged $175 once a month on your enrollment date. You can cancel anytime before the next billing cycle by emailing novascholarsacademy@icloud.com.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do I have to book all 4 sessions at once?</h3>
+            <p>No—you can schedule all four weekly slots immediately after enrolling, or return to the booking calendar anytime during your active month.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Only need one session right now?</h3>
+            <p>No problem! You can book a one-time <a href="book.html">Single Tutoring Session ($50)</a> instead without enrolling in a monthly plan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <h2>Prefer a One-Time Session First?</h2>
+        <p>Start with a single 60-minute session for $50—no monthly commitment required.</p>
+        <a href="book.html" class="cta-btn2">Book a Single Session ($50)</a>
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
+          </div>
+          <div class="contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+12166445624">216-644-5624</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
-        <!-- TODO: connect to real payment/checkout processor. This button is a placeholder for V1. -->
-        <a href="#" class="cta-btn price-btn">Purchase Monthly Plan — $175</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
       </div>
     </div>
-  </section>
-
-  <section class="booking-faq container">
-    <h2>How It Works</h2>
-    <div class="faq-grid">
-      <div class="faq-item">
-        <h3>1. Purchase your plan</h3>
-        <p>Click "Purchase Monthly Plan" and complete your payment for the month.</p>
-      </div>
-      <div class="faq-item">
-        <h3>2. Get confirmation</h3>
-        <p>You'll receive a confirmation once your payment is processed successfully.</p>
-      </div>
-      <div class="faq-item">
-        <h3>3. Schedule your sessions</h3>
-        <p>Use our online booking calendar to schedule your four sessions for the month, just like a single session booking.</p>
-      </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
     </div>
-  </section>
-
-  <section class="cta-section">
-    <div class="container">
-      <h2>Prefer to Start with One Session?</h2>
-      <p>Not ready to commit to the monthly plan yet? You can always book a single session first.</p>
-
-      <a href="book.html" class="cta-btn2">Book a Single Session</a>
-
-      <div class="cta-contact-info">
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">📞</span>
-          <a href="tel:+12166445624">216-644-5624</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
   </footer>
 
 </body>

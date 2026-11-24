@@ -1,92 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | NovaScholars Academy</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | NovaScholars Academy</title>
+  <meta name="description" content="Learn about NovaScholars Academy's mission, founder Brendan Bennett, and our individualized peer-to-peer approach to tutoring and academic support.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Us | NovaScholars Academy">
+  <meta property="og:description" content="Student-founded academic support built on deep understanding, personalized instruction, and relatable peer mentorship.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body class="about-page">
-    <header>
-        <p><a href="index.html" class="mainlink">NovaScholars Academy</a></p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html">Services</a>
-            <a href="book.html">Book a Session</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header>
+    <div class="header-inner">
+      <p class="brand-wrap">
+        <a href="index.html" class="mainlink">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>NovaScholars Academy</span>
+        </a>
+      </p>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+        <span>Menu</span>
+      </button>
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html" aria-current="page">About</a>
+        <a href="services.html">Services</a>
+        <a href="request.html">Request Materials</a>
+        <a href="contact.html">Contact</a>
+        <a href="book.html" class="nav-cta">Book a Session</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
     <section class="about-hero">
-        <div class="hero-content">
-            <h1>About NovaScholars Academy</h1>
-            <p>Building deep understanding through relatable, peer-to-peer mentorship.</p>
-        </div>
+      <div class="container">
+        <h1>About NovaScholars Academy</h1>
+        <p>Building deep understanding through relatable, individualized peer-to-peer mentorship.</p>
+      </div>
     </section>
 
-    <div class="container">
-        <section class="about-intro">
-            <div class="intro-grid">
-                <div class="intro-text">
-                    <h2>Our Mission</h2>
-                    <div class="mission-statement">
-                        "NovaScholars Academy was founded to help students build deep understanding, not just complete assignments."
-                    </div>
-                    <p>Our mission is to provide personalized academic support that strengthens critical thinking, confidence, and long-term success.</p>
-                </div>
-                <div class="intro-stats">
-                    <div class="about-card">
-                        <h3>Why NovaScholars Exists</h3>
-                        <p>Many students struggle not because they lack ability, but because they haven’t been given the time or structure to truly understand the material. NovaScholars was created to close that gap through focused, individualized instruction.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="about-intro">
+      <div class="container intro-grid">
+        <div class="intro-text">
+          <h2>Our Mission</h2>
+          <p class="mission-statement">
+            “NovaScholars Academy was founded to help students build deep understanding, not just complete assignments.”
+          </p>
+          <p>
+            Our mission is to provide personalized academic support that strengthens critical thinking, study confidence, and long-term independence—whether through live 1-on-1 tutoring or thoughtfully organized study resources.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Why NovaScholars Exists</h3>
+          <p>
+            Many students struggle not because they lack ability, but because they haven’t been given the time, structure, or clear explanations needed to truly grasp the material. NovaScholars was created to close that gap through focused, individualized instruction tailored to how each student learns best.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section class="peer-edge" style="padding-top: 0;">
-            <div class="edge-grid">
-                <div class="edge-text">
-                    <h2>Our Founder & Philosophy</h2>
-                    <p>NovaScholars was founded by Brendan Bennett, a student deeply engaged in STEM education, research, and academic mentorship. With experience across rigorous coursework, the goal is to help other students navigate challenging material with clarity and confidence.</p>
-                    <p><strong>Teaching Philosophy:</strong> Sessions focus on reasoning, patterns, and connections rather than memorization. Each lesson is structured around the student’s current level, goals, and learning style.</p>
-                </div>
-                <div class="about-card" style="border-top: none; border-left: 5px solid var(--primary);">
-                    <h3>Who We Work With</h3>
-                    <p>We work with middle and high school students seeking academic support in STEM subjects, enrichment, or skill-building. Ideal for students who want clarity, challenge, and meaningful progress.</p>
-                </div>
-            </div>
-        </section>
+    <section class="peer-edge" aria-labelledby="founder-heading">
+      <div class="container edge-grid">
+        <div class="edge-text">
+          <h2 id="founder-heading">Our Founder &amp; Philosophy</h2>
+          <p>
+            NovaScholars was founded by Brendan Bennett, a student deeply engaged in STEM education, research, and academic mentorship. Having navigated rigorous coursework firsthand, Brendan started NovaScholars to help other students approach challenging subjects with clarity and confidence.
+          </p>
+          <p>
+            <strong>Teaching Philosophy:</strong> Sessions focus on reasoning, patterns, and connections rather than rote memorization. Every lesson and study resource is adapted to the student’s current level, class expectations, and personal learning style.
+          </p>
+        </div>
+        <div class="about-card">
+          <h3>Who We Work With</h3>
+          <p>
+            We work with middle and high school students seeking supportive academic guidance in STEM subjects, core coursework, and organization or study skills—alongside parents who want dependable, transparent communication and structured support.
+          </p>
+        </div>
+      </div>
+    </section>
 
-        <section class="differences">
-            <h2 style="text-align:center;">What Makes Us Different</h2>
-            <div class="diff-grid">
-                <div class="diff-item"><span>🚀</span><p>Personalized session planning</p></div>
-                <div class="diff-item"><span>🔍</span><p>Pre-session intake goals</p></div>
-                <div class="diff-item"><span>🧠</span><p>Understanding "Why"</p></div>
-                <div class="diff-item"><span>👔</span><p>Professional instruction</p></div>
-            </div>
-            <div class="about-card" style="max-width: 800px; margin: 40px auto; text-align: center;">
-                <h3>Our Commitment to Quality</h3>
-                <p>Every session is prepared in advance, conducted with professionalism, and focused on measurable improvement. Clear communication and respect for students’ time are central to every interaction.</p>
-            </div>
-        </section>
-    </div>
+    <section class="differences">
+      <div class="container">
+        <h2>What Makes Us Different</h2>
+        <div class="diff-grid">
+          <div class="diff-item">
+            <span aria-hidden="true">🧭</span>
+            <p>Personalized session planning</p>
+          </div>
+          <div class="diff-item">
+            <span aria-hidden="true">🎯</span>
+            <p>Goal-focused preparation</p>
+          </div>
+          <div class="diff-item">
+            <span aria-hidden="true">🧠</span>
+            <p>Understanding the “why”</p>
+          </div>
+          <div class="diff-item">
+            <span aria-hidden="true">🤝</span>
+            <p>Approachable peer instruction</p>
+          </div>
+        </div>
+
+        <div class="about-card about-commitment">
+          <h3>Our Commitment to Quality</h3>
+          <p>
+            Every tutoring session, refined note set, and custom study guide is prepared thoughtfully, conducted with professionalism, and focused on measurable student clarity. Respect for students’ and families’ time is central to every interaction.
+          </p>
+        </div>
+      </div>
+    </section>
 
     <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Get Started?</h2>
-            <p>Whether you’re preparing for an exam, strengthening fundamentals, or exploring advanced material, NovaScholars is here to help.</p>
-            <a href="book.html" class="cta-btn2">Book a Session Now</a>
-            <div class="cta-contact-info">
-                <div class="contact-item"><span>✉️</span> <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></div>
-                <div class="contact-item"><span>📞</span> <a href="tel:+12166445624">216-644-5624</a></div>
-            </div>
+      <div class="container">
+        <h2>Ready to Get Started?</h2>
+        <p>Whether you’re preparing for an upcoming exam, strengthening core fundamentals, or organizing your class notes, NovaScholars is here to help.</p>
+        <div class="hero-btns">
+          <a href="services.html" class="cta-btn2">Explore All Services</a>
+          <a href="book.html" class="cta-btn-outline">Book a Session</a>
         </div>
+        <div class="cta-contact-info">
+          <div class="contact-item">
+            <span aria-hidden="true">✉️</span>
+            <a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a>
+          </div>
+          <div class="contact-item">
+            <span aria-hidden="true">📞</span>
+            <a href="tel:+12166445624">216-644-5624</a>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
-    </footer>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <strong>NovaScholars Academy</strong>
+        <p>Student-founded 1-on-1 tutoring, notes refinement, and custom study guides helping middle and high school students build lasting academic confidence.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services &amp; Pricing</a></li>
+          <li><a href="book.html">Book a Session</a></li>
+          <li><a href="monthly-plan.html">Monthly Plan</a></li>
+          <li><a href="request.html">Request Materials</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul class="footer-links">
+          <li><a href="mailto:novascholarsacademy@icloud.com">novascholarsacademy@icloud.com</a></li>
+          <li><a href="tel:+12166445624">216-644-5624</a></li>
+          <li>Remote via Zoom &amp; Google Meet</li>
+          <li>Typical reply within 24 hours</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 NovaScholars Academy. All rights reserved.</p>
+      <p>Personalized Academic Support</p>
+    </div>
+  </footer>
+
 </body>
 </html>
